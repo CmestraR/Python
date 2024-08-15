@@ -6,11 +6,14 @@ def saludo(request):
 def despedida(request):
     return HttpResponse("Adiós Mundo!!!")
 
-def adulto(request, nombre, edad, sexo):
+from django.http import HttpResponse
 
-    nombre_letras = nombre.len()
+def adulto(request, nombre):
+    nombre_letras = len(nombre)  # Aquí se usa len() correctamente
     if nombre_letras:
-        return HttpResponse(f"Tu nombre tiene {nombre_letras}")
+        return HttpResponse(f"Tu nombre tiene {nombre_letras} letras.")
+    else:
+        return HttpResponse("No se proporcionó un nombre.")
 
 
         

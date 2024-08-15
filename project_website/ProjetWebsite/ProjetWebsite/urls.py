@@ -7,5 +7,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('saludo/', views.saludo, name="saludo"),
     path('adios/', views.despedida, name="adios"),
-    path('persona/<str:nombre>/<int:edad>/<str:sexo>', views.adulto, name="persona")
+    path('persona/<str:nombre>/', views.adulto, name="persona")
 ]
